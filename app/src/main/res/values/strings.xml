@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AAD 2020</string>
+    <string name="leaderBoard">LEADERBOARD</string>
+    <string name="submit">Submit</string>
+    <string name="skill_iq_leaders">Skill IQ Leaders</string>
+    <string name="learning_leaders">Learning Leaders</string>
+    <string name="top_learner_badge">Top learner badge</string>
+    <string name="top_skill_iq_badge">Top Skill Iq badge</string>
+</resources>
