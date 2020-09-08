@@ -1,5 +1,5 @@
 package com.blazingtech.aad2020.util
 
 object Constants{
-    const val BASEURL = "https://gadsapi.herokuapp.com/"
+    const val BASE_URL: String = "https://gadsapi.herokuapp.com"
 }

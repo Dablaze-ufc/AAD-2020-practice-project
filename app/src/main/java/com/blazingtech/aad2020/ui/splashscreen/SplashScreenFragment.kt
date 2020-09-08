@@ -1,26 +1,27 @@
 package com.blazingtech.aad2020.ui.splashscreen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.blazingtech.aad2020.R
-import com.blazingtech.aad2020.databinding.ActivitySplashScreenBinding
+import com.blazingtech.aad2020.databinding.FragmentSplashScreenBinding
+
 
 class SplashScreenFragment : Fragment() {
 
 
     private lateinit var viewModel: SplashScreenViewModel
-    private lateinit var binding: ActivitySplashScreenBinding
+    private lateinit var binding: FragmentSplashScreenBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-         binding = ActivitySplashScreenBinding.inflate(inflater)
+         binding = FragmentSplashScreenBinding.inflate(inflater)
         viewModel = ViewModelProvider(this).get(SplashScreenViewModel::class.java)
         return binding.root
     }

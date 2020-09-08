@@ -9,12 +9,16 @@ class MainViewModel : ViewModel() {
     private val repository = Repository()
 
 
-    val topLearners = liveData(Dispatchers.IO){
+    init {
+        getTopLearners()
+    }
+
+    fun getTopLearners() = liveData(Dispatchers.IO) {
         val retrievedLearners = repository.getTopLearnersFromAPI()
         emit(retrievedLearners)
     }
 
-    val topSkillIq = liveData(Dispatchers.IO){
+    fun getTopSkillIq() = liveData(Dispatchers.IO) {
         val retrievedSkillIq = repository.getTopSkillIq()
         emit(retrievedSkillIq)
     }

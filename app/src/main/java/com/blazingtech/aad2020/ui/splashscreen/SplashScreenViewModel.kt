@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
 class SplashScreenViewModel : ViewModel() {
-
-    private val uiScope = CoroutineScope(Dispatchers.Main + Job())
+    private val viewModelJob = Job()
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private val _navigateToNext = MutableLiveData(false)
 
@@ -21,4 +21,9 @@ class SplashScreenViewModel : ViewModel() {
        } }
 
    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 }
