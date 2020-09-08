@@ -6,16 +6,16 @@
     app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.blazingtech.aad2020.ui.splashscreen.SplashScreenFragment"
+        android:name="com.blazingtech.aad2020.ui.splashscreen.SplashScreenActivity"
         android:label="activity_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        tools:layout="@layout/activity_splash_screen" >
         <action
             android:id="@+id/action_splashScreenFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.blazingtech.aad2020.ui.main.MainFragment"
+        android:name="com.blazingtech.aad2020.ui.learners.LearnersFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/fragment_learners" />
 </navigation>

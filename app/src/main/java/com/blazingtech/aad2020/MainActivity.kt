@@ -1,19 +1,34 @@
 package com.blazingtech.aad2020
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.appcompat.app.AppCompatActivity
+import com.blazingtech.aad2020.adapter.ViewPagerAdapter
+import com.blazingtech.aad2020.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mNavController: NavController
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        mNavController = Navigation.findNavController(this, R.id.fragment)
+        val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+
+        binding.viewPager.adapter = adapter
+
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+
+            when(position){
+                0 ->  {
+                    tab.text = "Learning Leaders"}
+                else -> {
+
+                    tab.text = "Skill IQ Leaders"}
+            }
+        }.attach()
 
     }
 }

@@ -6,4 +6,6 @@
     <string name="learning_leaders">Learning Leaders</string>
     <string name="top_learner_badge">Top learner badge</string>
     <string name="top_skill_iq_badge">Top Skill Iq badge</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
