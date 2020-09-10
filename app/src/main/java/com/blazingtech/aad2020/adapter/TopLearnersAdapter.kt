@@ -1,5 +1,6 @@
 package com.blazingtech.aad2020.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.item_learning_leaders.view.*
 
 class TopLearnersAdapter : ListAdapter<LearnersItem,TopLearnersAdapter.LearnersViewHolder>(DiffCallback) {
+
     companion object DiffCallback: DiffUtil.ItemCallback<LearnersItem>() {
         override fun areItemsTheSame(oldItem: LearnersItem, newItem: LearnersItem): Boolean {
             return oldItem === newItem
@@ -36,10 +38,13 @@ class TopLearnersAdapter : ListAdapter<LearnersItem,TopLearnersAdapter.LearnersV
 
 
     class LearnersViewHolder(private var binding: View): RecyclerView.ViewHolder(binding){
+        private  val TAG = "TopLearnersAdapter"
         fun bind(learner: LearnersItem){
+            Log.d(TAG, "bind: $learner")
 
             binding.textViewLearningLeadersName.text = learner.name
             binding.textViewLearningLeadersCountry.text = learner.country
+            Log.d(TAG, "bind: ${binding.textViewLearningLeadersCountry.text}")
             binding.textViewLearningLeadersHours.text = "${learner.hours} Learning Hours"
 
             val requestOptions = RequestOptions()

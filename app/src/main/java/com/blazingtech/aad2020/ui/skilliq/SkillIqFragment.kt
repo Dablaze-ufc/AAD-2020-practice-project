@@ -3,6 +3,7 @@ package com.blazingtech.aad2020.ui.skilliq
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -36,6 +37,7 @@ class SkillIqFragment : Fragment() {
             binding.recyclerViewSkill.apply {
                 val adapter = TopSkillIQAdapter()
                 this.adapter = adapter
+                binding.progressBar.visibility = GONE
                 adapter.submitList(it)
             }
         })

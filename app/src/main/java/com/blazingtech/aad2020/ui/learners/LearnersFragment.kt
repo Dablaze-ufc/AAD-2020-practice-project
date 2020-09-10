@@ -29,6 +29,7 @@ class LearnersFragment : Fragment() {
             binding.recyclerLearners.apply {
                 val adapter = TopLearnersAdapter()
                 this.adapter = adapter
+                binding.progressBarLearners.visibility = View.GONE
                 adapter.submitList(it)
             }
         })
