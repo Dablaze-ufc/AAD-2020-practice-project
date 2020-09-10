@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.blazingtech.aad2020.adapter.TopSkillIQAdapter
 import com.blazingtech.aad2020.databinding.FragmentSkillIqBinding
 
 
@@ -31,6 +32,13 @@ class SkillIqFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getSkillIq.observe(viewLifecycleOwner,{
+            binding.recyclerViewSkill.apply {
+                val adapter = TopSkillIQAdapter()
+                this.adapter = adapter
+                adapter.submitList(it)
+            }
+        })
 
     }
 

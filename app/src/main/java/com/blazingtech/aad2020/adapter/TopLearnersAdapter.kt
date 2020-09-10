@@ -1,15 +1,16 @@
 package com.blazingtech.aad2020.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.blazingtech.aad2020.R
-import com.blazingtech.aad2020.databinding.ItemLearningLeadersBinding
 import com.blazingtech.aad2020.model.LearnersItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import kotlinx.android.synthetic.main.item_learning_leaders.view.*
 
 class TopLearnersAdapter : ListAdapter<LearnersItem,TopLearnersAdapter.LearnersViewHolder>(DiffCallback) {
     companion object DiffCallback: DiffUtil.ItemCallback<LearnersItem>() {
@@ -25,7 +26,7 @@ class TopLearnersAdapter : ListAdapter<LearnersItem,TopLearnersAdapter.LearnersV
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LearnersViewHolder {
        return LearnersViewHolder(
-          ItemLearningLeadersBinding.inflate(LayoutInflater.from(parent.context))
+          LayoutInflater.from(parent.context).inflate(R.layout.item_learning_leaders,parent,false)
        )
     }
 
@@ -34,7 +35,7 @@ class TopLearnersAdapter : ListAdapter<LearnersItem,TopLearnersAdapter.LearnersV
     }
 
 
-    class LearnersViewHolder(private var binding: ItemLearningLeadersBinding): RecyclerView.ViewHolder(binding.root){
+    class LearnersViewHolder(private var binding: View): RecyclerView.ViewHolder(binding){
         fun bind(learner: LearnersItem){
 
             binding.textViewLearningLeadersName.text = learner.name
